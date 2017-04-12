@@ -6,6 +6,8 @@ defaults:
 variables:
   - name: SYMFONY_ENV
     value: prod
+  - name: DEVELOPMENT_MODE
+    value: 1
 
 tasks:
   images:
@@ -24,6 +26,8 @@ tasks:
             environment_variables:
               - name: SYMFONY_ENV
                 value: ${SYMFONY_ENV}
+              - name: DEVELOPMENT_MODE
+                value: ${DEVELOPMENT_MODE}
 
 
 pipelines:
@@ -36,5 +40,7 @@ pipelines:
     variables:
       - name: SYMFONY_ENV
         value: dev
+      - name: DEVELOPMENT_MODE
+        value: 0
 
 
